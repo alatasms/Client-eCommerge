@@ -14,7 +14,7 @@ import { ProductService } from 'src/app/services/common/models/product.service';
 export class ListComponent implements OnInit {
 
   constructor(private productService: ProductService, private alertifySerice:AlertifyService) { }
-  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate','updatedDate'];
+  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate','updatedDate','edit','delete'];
   dataSource:MatTableDataSource<List_Product>=null;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -36,6 +36,10 @@ export class ListComponent implements OnInit {
     this.dataSource=new MatTableDataSource<List_Product>(allProducts.products)
     this.paginator.length=allProducts.totalCount;
     
+  }
+
+  delete(id:string){
+    alert(id);
   }
 
   async pageChanged(){
