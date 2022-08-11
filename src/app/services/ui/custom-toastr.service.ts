@@ -15,7 +15,7 @@ export class CustomToastrService {
 
 export class ToastrOptions {
   toastrMessageType:ToastrMessageType=ToastrMessageType.Success;
-  position:Position=Position.TopRight;
+  position:ToastrPosition=ToastrPosition.TopRight;
 }
 
 export enum ToastrMessageType {
@@ -25,7 +25,7 @@ export enum ToastrMessageType {
   Error = "error"
 }
 
-export enum Position {
+export enum ToastrPosition {
   TopRight="toast-top-right",
   BottomRight="toast-bottom-right",
   BottomLeft="toast-bottom-left",

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CustomToastrService, Position, ToastrMessageType } from './services/ui/custom-toastr.service';
+import { CustomToastrService, ToastrOptions, ToastrMessageType } from './services/ui/custom-toastr.service';
 declare var $:any
 
 @Component({
