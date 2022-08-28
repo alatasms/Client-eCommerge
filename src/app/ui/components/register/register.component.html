@@ -1,0 +1,39 @@
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+    <form [formGroup]="frm" (ngSubmit)="onSubmit(frm.value)">
+        <div class="form-group">
+            <label for="name" class="form-label">Adı</label>
+            <input type="email" formControlName="name" class="form-control" id="name" placeholder="Adı"  [ngClass]="{'is-invalid': submitted && component.name.errors}"> 
+            <div  class="form-text invalid-feedback">{{message}}</div>
+        </div>
+        <div class="form-group">
+            <label for="surname" class="form-label">Soyadı</label>
+            <input type="email" formControlName="surname" class="form-control" id="surname" placeholder="Soyadı">
+            <div id="surnamehelp" class="form-text"></div>
+        </div>
+        <div class="form-group">
+            <label for="username" class="form-label">Kullanıcı Adı</label>
+            <input type="email" formControlName="username" class="form-control" id="username" placeholder="Kullanıcı Adı">
+            <div id="usernamehelp" class="form-text"></div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email">
+            <div id="emailHelp" class="form-text">Mail adresinizi kimseyle paylaşmayacağız deeermişim.</div>
+        </div>
+        <div class="form-group">
+            <label for="password"  class="form-label">Parola</label>
+            <input type="password" formControlName="password" class="form-control" id="password" placeholder="Parola">
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Parola Tekrar</label>
+            <input type="password" formControlName="passwordAgain" class="form-control" id="password" placeholder="Parola Tekrar">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+    </form>
+</div>
+<div class="col-md-3"></div>
+</div>
+
