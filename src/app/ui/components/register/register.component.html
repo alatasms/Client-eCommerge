@@ -3,14 +3,14 @@
 <div class="col-md-6">
     <form [formGroup]="frm" (ngSubmit)="onSubmit(frm.value)">
         <div class="form-group">
-            <label for="name" class="form-label">Adı</label>
-            <input type="email" formControlName="name" class="form-control" id="name" placeholder="Adı"  [ngClass]="{'is-invalid': submitted && component.name.errors}"> 
+            <label for="firstName" class="form-label">Adı</label>
+            <input type="firstName" formControlName="firstName" class="form-control" id="firstName" placeholder="Adı"  [ngClass]="{'is-invalid': submitted && component.firstName.errors}"> 
             <div  class="form-text invalid-feedback">{{message}}</div>
         </div>
         <div class="form-group">
-            <label for="surname" class="form-label">Soyadı</label>
-            <input type="email" formControlName="surname" class="form-control" id="surname" placeholder="Soyadı">
-            <div id="surnamehelp" class="form-text"></div>
+            <label for="lastName" class="form-label">Soyadı</label>
+            <input type="email" formControlName="lastName" class="form-control" id="lastName" placeholder="Soyadı">
+            <div id="lastNamehelp" class="form-text"></div>
         </div>
         <div class="form-group">
             <label for="username" class="form-label">Kullanıcı Adı</label>
@@ -27,8 +27,8 @@
             <input type="password" formControlName="password" class="form-control" id="password" placeholder="Parola">
         </div>
         <div class="form-group">
-            <label for="password" class="form-label">Parola Tekrar</label>
-            <input type="password" formControlName="passwordAgain" class="form-control" id="password" placeholder="Parola Tekrar">
+            <label for="passwordConfirm" class="form-label">Parola Tekrar</label>
+            <input type="password" formControlName="passwordConfirm" class="form-control" id="passwordConfirm" placeholder="Parola Tekrar">
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Kayıt Ol</button>
