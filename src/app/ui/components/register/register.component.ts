@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Create_User } from 'src/app/contracts/User/create_user';
 import { User } from 'src/app/entities/user';
 import { UserService } from 'src/app/services/common/models/user.service';
@@ -12,9 +12,9 @@ import { CustomToastrService, ToastrMessageType, ToastrPosition } from 'src/app/
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder, private userService:UserService, private toastrService:CustomToastrService) { }
+  constructor(private formBuilder:UntypedFormBuilder, private userService:UserService, private toastrService:CustomToastrService) { }
 
-  frm:FormGroup;
+  frm:UntypedFormGroup;
   ngOnInit(): void {
     this.frm = this.formBuilder.group({
       firstName:["",[Validators.required,
@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
   }
 
   //todo
-  displayMessages(frmm:FormGroup){
+  displayMessages(frmm:UntypedFormGroup){
     if(frmm.controls['name'].errors.required ){
       this.message="İsim alanı boş geçilmemelidir."
     }

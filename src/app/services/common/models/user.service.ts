@@ -27,20 +27,14 @@ export class UserService {
   async login(loginUser:Login_User, successCallBack?: () => void) {
    const observable:Observable<Login_User | Login_User_Response> = this.httpClientService.post<Login_User | Login_User_Response>({controller:"users",action:"login"},loginUser);
    const response: Login_User_Response = await firstValueFrom(observable) as Login_User_Response;
-   debugger;
 
     if (response) {
       localStorage.setItem("accessToken",response.accessToken.token);
-      console.log(response.accessToken);
-      console.log(response.accessToken.token);
-
       this.customToastrService.message(response.message,"Giriş Başarılı",{
         toastrMessageType:ToastrMessageType.Success,
         position:ToastrPosition.TopRight
       })
     }
-
-
-   successCallBack;
+    successCallBack();
   }
 }
