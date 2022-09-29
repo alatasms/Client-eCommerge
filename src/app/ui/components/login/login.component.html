@@ -11,6 +11,11 @@
         <input #txtPassword type="password"  id="inputPassword" class="form-control" placeholder="password" required>
         </div>
         <button style="margin-top: 5px;" class="btn btn-lg btn-primary btn-block" (click)="login(txtUsernameOrEmail.value,txtPassword.value)" type="submit">Giriş Yap</button>
+            
+        
+
+        <asl-google-signin-button class="btn btn-lg btn-google btn-block text-uppercase btn-outline">Google ile giriş yap </asl-google-signin-button>
+        <img src="../../../../assets/facebook.png" style="width: 30px; height: 30px; cursor: pointer;" (click)="facebookLoginScreen()">
       
 </div>
 <div class="col-md-4"></div>

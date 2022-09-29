@@ -1,3 +1,4 @@
+import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './services/common/auth.service';
@@ -11,7 +12,7 @@ declare var $: any
 })
 export class AppComponent {
 
-  constructor(private toastrService: CustomToastrService, public authService: AuthService, private router: Router) {
+  constructor(private toastrService: CustomToastrService, public authService: AuthService, private router: Router, private socialAuthService: SocialAuthService ) {
     authService.identityCheck();
 
     //toastr.message("Merhaba","Musa Alatas",{position:Position.TopFullWidth, toastrMessageType:ToastrMessageType.Warning});
@@ -19,6 +20,7 @@ export class AppComponent {
 
   SignOut() {
     localStorage.removeItem("accessToken");
+    this.socialAuthService.signOut();
     this.authService.identityCheck();
     this.router.navigate([""]);
     this.toastrService.message("Oturum kapatıldı", "Kapatılıyor", {
