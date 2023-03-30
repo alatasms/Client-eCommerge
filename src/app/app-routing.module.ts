@@ -18,7 +18,12 @@ const routes: Routes = [
   { path: "baskets", loadChildren: () => import("./ui/components/baskets/baskets.module").then(module => module.BasketsModule) },
   { path: "products", loadChildren: () => import("./ui/components/products/products.module").then(module => module.ProductsModule) },
   { path: "register", loadChildren: () => import("./ui/components/register/register.module").then(module => module.RegisterModule) },
-  { path: "login", loadChildren: () => import("./ui/components/login/login.module").then(module => module.LoginModule) }
+  { path: "login", loadChildren: () => import("./ui/components/login/login.module").then(module => module.LoginModule) },
+  { path: "password-reset", loadChildren: () => import("./ui/components/password-reset/password-reset.module").then(module => module.PasswordResetModule) },
+  { path: "update-password/:userId/:resetToken", loadChildren: () => import("./ui/components/update-password/update-password.module").then(module => module.UpdatePasswordModule) },
+  { path: "confirm-email/:userId/:confirmationToken", loadChildren: () => import("./ui/components/confirm-email/confirm-email.module").then(module => module.ConfirmEmailModule) },
+
+
 
 
 ];

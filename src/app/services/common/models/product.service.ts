@@ -27,7 +27,7 @@ export class ProductService {
             message += `${_v}<br>`;
           });
         });
-        errorCallBack(message);//call back fonkisyonudur.
+        errorCallBack(message);
     });
   }
 

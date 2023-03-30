@@ -46,11 +46,11 @@ import { HttpErrorHandlerInterceptorService } from './services/common/http-error
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider("727972319738-ninp76sfdrdkhj58c3rin7boqrcj40ku.apps.googleusercontent.com")
+            provider: new GoogleLoginProvider("yourGoogleKey")
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('415584320680804')
+            provider: new FacebookLoginProvider('YourFacebookKey')
           },
         ],
         onError: err => console.log(err)

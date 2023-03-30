@@ -1,6 +1,7 @@
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { shareReplay } from 'rxjs';
 import { Login_User_Response } from 'src/app/contracts/User/login_user_response';
 import { Login_User } from 'src/app/entities/login_user';
 import { AuthService } from 'src/app/services/common/auth.service';

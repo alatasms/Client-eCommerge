@@ -35,18 +35,18 @@ export class DeleteDirective {
     @Input() controller:string
     @Output() callBack:EventEmitter<any>= new EventEmitter();
 
-    @HostListener("click")//Bu directive'in kullanıldığı dom nesnesine tıklama olayı gerçekleştirildiğinde metod tetiklenecektir.
+    @HostListener("click")//will be triggered when the click event is performed on the dom object where this directive is used.
     async onClick(){
       
       this.dialogService.openDialog({
         componentType:DeleteDialogComponent,
         data:DeleteState.Yes,
         afterClosed:async ()=>{
-          //buraya spinner gelecek. BaseComponent oluşturmayı unutma.
+          //TODO Spinner
           const td: HTMLTableCellElement = this.element.nativeElement;
           await this.httpClientService.delete({
             controller:this.controller
-            //controller bilgisini html kısmında parametre olarak manuel şekilde alıyoruz. bunu iyileştirebiliriz.
+            //TODO fix don't get the controller information manually as a parameter in the html section.
           },this.id).subscribe(data=>{
             $(td.parentElement).animate({
               opacity:0,

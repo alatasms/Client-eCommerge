@@ -33,7 +33,6 @@ export class HttpClientService {
     } else {
       url = `${this.url(requestParameter)}${requestParameter.queryString?`?${requestParameter.queryString}`:""}`;
     }
-
     return this.httpClient.post<T>(url, body, { headers: requestParameter.headers });
   }
 
@@ -66,5 +65,5 @@ export class RequestParameters {
   queryString?:string;
   headers?: HttpHeaders;
   baseUrl?: string;
-  fullEndPoint?: string; //direkt farklı bir servise istek gönderme ihtimaline karşı.
+  fullEndPoint?: string; //For external API
 }

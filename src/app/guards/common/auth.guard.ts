@@ -27,13 +27,14 @@ export class AuthGuard implements CanActivate {
     // } catch {
     //   expired = true;
     // }
-
+    
     if (!_isAuthenticated) {
+      this.router.navigate(["login"], { queryParams: { returnUrl: state.url } })
       this.toastrService.message("Oturum açmanız gerekiyor.","Yetkisiz erişim",{
         position:ToastrPosition.TopRight,
         toastrMessageType:ToastrMessageType.Warning
       })
-      this.router.navigate(["login"], { queryParams: { returnUrl: state.url } })
+      
     }
 
     return true;

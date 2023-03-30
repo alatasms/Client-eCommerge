@@ -11,7 +11,7 @@
         <input #txtPassword type="password"  id="inputPassword" class="form-control" placeholder="password" required>
         </div>
         <button style="margin-top: 5px;" class="btn btn-lg btn-primary btn-block" (click)="login(txtUsernameOrEmail.value,txtPassword.value)" type="submit">Giriş Yap</button>
-            
+        <a style="margin-top: 5px; margin-left: 5px;" routerLink="/password-reset" class="btn btn-lg btn-secondary btn-block" type="submit">Şifremi Unuttum</a>    
         
 
         <asl-google-signin-button class="btn btn-lg btn-google btn-block text-uppercase btn-outline">Google ile giriş yap </asl-google-signin-button>

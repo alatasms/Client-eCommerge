@@ -14,12 +14,11 @@ export class AppComponent {
 
   constructor(private toastrService: CustomToastrService, public authService: AuthService, private router: Router, private socialAuthService: SocialAuthService ) {
     authService.identityCheck();
-
-    //toastr.message("Merhaba","Musa Alatas",{position:Position.TopFullWidth, toastrMessageType:ToastrMessageType.Warning});
   }
 
   SignOut() {
     localStorage.removeItem("accessToken");
+    debugger;
     this.socialAuthService.signOut();
     this.authService.identityCheck();
     this.router.navigate([""]);
